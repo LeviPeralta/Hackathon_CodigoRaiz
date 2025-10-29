@@ -81,7 +81,7 @@
         <div class="container">
           <div class="row">
             <div class="col-lg-9 mx-auto text-center mb-3">
-              <h5 class="fw-bold fs-3 fs-lg-5 lh-sm mb-3">New Opportunities</h5>
+              <h5 class="fw-bold fs-3 fs-lg-5 lh-sm mb-3">Oportunidades</h5>
               <p class="mb-5">We are the first and the only crowdfunding platform enabling you to help finance our farmers.</p>
             </div>
           </div>
@@ -491,6 +491,27 @@
     <script src="assets/js/theme.js"></script>
 
     <link href="https://fonts.googleapis.com/css2?family=Chivo:wght@300;400;700;900&amp;display=swap" rel="stylesheet">
+
+      <!-- 🌾 Caña de azúcar que crece -->
+  <div class="cana-container">
+    <img src="assets/img/cana_1.png" alt="Caña de azúcar" class="cana" id="cana">
+  </div>
+
+  <script>
+    const cana = document.getElementById('cana');
+    const maxHeight = 600; // Altura máxima en píxeles
+
+    window.addEventListener('scroll', () => {
+      const scrollTop = window.scrollY;
+      const scrollHeight = document.body.scrollHeight - window.innerHeight;
+      const progress = Math.min(scrollTop / scrollHeight, 1);
+      const height = progress * maxHeight;
+
+      cana.style.height = `${height}px`;
+      cana.style.clipPath = `inset(${100 - progress * 100}% 0 0 0)`;
+    });
+  </script>
+
   </body>
 
 </html>

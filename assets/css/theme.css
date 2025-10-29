@@ -18324,8 +18324,23 @@ label {
   }
 }
 
-/*-----------------------------------------------
-|   User Styles
------------------------------------------------*/
 
-/*# sourceMappingURL=theme.css.map */
+.cana-container {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  /*z-index: -1; Esto la manda detrás del contenido */
+  pointer-events: none; /* Para que no bloquee clics en el contenido */
+}
+
+
+.cana {
+  width: auto;
+  height: 0;
+  object-fit: cover;
+  transition: height 0.1s ease-out;
+  clip-path: inset(100% 0 0 0);
+}
