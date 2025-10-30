@@ -10,7 +10,7 @@
     <!-- ===============================================-->
     <!--    Document Title-->
     <!-- ===============================================-->
-    <title>Caña Limpia Xochitepec
+    <title>Caña Limpia
     </title>
 
 
@@ -50,11 +50,53 @@
               <li class="nav-item px-2"><a class="nav-link fw-medium" href="#contact">Contactanos</a></li>
             </ul>
             <form class="d-flex">
-              <button class="btn btn-lg btn-dark bg-gradient order-0" type="submit">Sign Up</button>
+              <button class="btn btn-lg btn-dark bg-gradient order-0" type="button" data-bs-toggle="modal" data-bs-target="#loginModal">Sign Up</button>
+
             </form>
           </div>
         </div>
       </nav>
+
+      <!-- Modal Login -->
+      <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+
+            <div class="modal-header">
+              <h5 class="modal-title" id="loginModalLabel">Iniciar Sesión</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+            </div>
+
+            <div class="modal-body">
+              <form id="loginForm">
+                <div class="mb-3">
+                  <label for="email" class="form-label">Correo</label>
+                  <input type="email" class="form-control" id="email" name="email" required>
+                </div>
+
+                <div class="mb-3">
+                  <label for="password" class="form-label">Contraseña</label>
+                  <input type="password" class="form-control" id="password" name="password" required>
+                </div>
+
+                <div class="d-grid gap-2 mb-3">
+                  <button type="submit" class="btn btn-primary">Log In</button>
+                </div>
+                
+                <div class="d-grid gap-2">
+                  <button type="button" id="connectWallet" class="btn btn-warning">Conectar con Wallet</button>
+                </div>
+              </form>
+
+              <div id="loginStatus" class="mt-3 text-center"></div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+
+
       <section class="py-0" id="header">
         <div class="bg-holder d-none d-md-block" style="background-image:url(assets/img/illustrations/hero-header.png);background-position:right top;background-size:contain;">
         </div>
@@ -82,7 +124,7 @@
           <div class="row">
             <div class="col-lg-9 mx-auto text-center mb-3">
               <h5 class="fw-bold fs-3 fs-lg-5 lh-sm mb-3">Oportunidades</h5>
-              <p class="mb-5">We are the first and the only crowdfunding platform enabling you to help finance our farmers.</p>
+              <p class="mb-5">Con cada inversión, ayudas a capturar CO₂ y a transformar el futuro de Xochitepec. Sé parte de la primera plataforma que convierte tus acciones en un cambio real.</p>
             </div>
           </div>
           <div class="row flex-center h-100">
@@ -92,8 +134,8 @@
                   <div class="card h-100 shadow px-4 px-md-2 px-lg-3 card-span pt-6">
                     <div class="text-center text-md-start card-hover"><img class="ps-3 icons" src="assets/img/icons/farmer.svg" height="60" alt="" />
                       <div class="card-body">
-                        <h6 class="fw-bold fs-1 heading-color">Connect with our farmers</h6>
-                        <p class="mt-3 mb-md-0 mb-lg-2">Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione</p>
+                        <h6 class="fw-bold fs-1 heading-color">Crecemos juntos en Xochitepec</h6>
+                        <p class="mt-3 mb-md-0 mb-lg-2">Los agricultores de Xochitepec tienen la oportunidad de acceder a financiamiento directo a través de la venta de tokens CO₂. Esto les permite invertir en herramientas, semillas y técnicas sostenibles que aumentan la producción y reducen emisiones de carbono.</p>
                       </div>
                     </div>
                   </div>
@@ -102,7 +144,7 @@
                   <div class="card h-100 shadow px-4 px-md-2 px-lg-3 card-span pt-6">
                     <div class="text-center text-md-start card-hover"><img class="ps-3 icons" src="assets/img/icons/growth.svg" height="60" alt="" />
                       <div class="card-body">
-                        <h6 class="fw-bold fs-1 heading-color">Grow your business</h6>
+                        <h6 class="fw-bold fs-1 heading-color">Invertir en un futuro limpio y justo</h6>
                         <p class="mt-3 mb-md-0 mb-lg-2">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
                       </div>
                     </div>
@@ -112,7 +154,7 @@
                   <div class="card h-100 shadow px-4 px-md-2 px-lg-3 card-span pt-6">
                     <div class="text-center text-md-start card-hover"><img class="ps-3 icons" src="assets/img/icons/planting.svg" height="60" alt="" />
                       <div class="card-body">
-                        <h6 class="fw-bold fs-1 heading-color">Social Impact Invesment</h6>
+                        <h6 class="fw-bold fs-1 heading-color">Tu oportunidad de impactar el planeta</h6>
                         <p class="mt-3 mb-md-0 mb-lg-2">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos</p>
                       </div>
                     </div>
@@ -489,28 +531,30 @@
     <script src="vendors/is/is.min.js"></script>
     <script src="https://polyfill.io/v3/polyfill.min.js?features=window.scroll"></script>
     <script src="assets/js/theme.js"></script>
+    <script type="module" src="src/js/stellar-modal.js"></script>
+
 
     <link href="https://fonts.googleapis.com/css2?family=Chivo:wght@300;400;700;900&amp;display=swap" rel="stylesheet">
 
       <!-- 🌾 Caña de azúcar que crece -->
-  <div class="cana-container">
-    <img src="assets/img/cana_1.png" alt="Caña de azúcar" class="cana" id="cana">
-  </div>
+    <!--<div class="cana-container">
+      <img src="assets/img/cana_1.png" alt="Caña de azúcar" class="cana" id="cana">
+    </div>
 
-  <script>
-    const cana = document.getElementById('cana');
-    const maxHeight = 600; // Altura máxima en píxeles
+    <script>
+      const cana = document.getElementById('cana');
+      const maxHeight = 600; // Altura máxima en píxeles
 
-    window.addEventListener('scroll', () => {
-      const scrollTop = window.scrollY;
-      const scrollHeight = document.body.scrollHeight - window.innerHeight;
-      const progress = Math.min(scrollTop / scrollHeight, 1);
-      const height = progress * maxHeight;
+      window.addEventListener('scroll', () => {
+        const scrollTop = window.scrollY;
+        const scrollHeight = document.body.scrollHeight - window.innerHeight;
+        const progress = Math.min(scrollTop / scrollHeight, 1);
+        const height = progress * maxHeight;
 
-      cana.style.height = `${height}px`;
-      cana.style.clipPath = `inset(${100 - progress * 100}% 0 0 0)`;
-    });
-  </script>
+        cana.style.height = `${height}px`;
+        cana.style.clipPath = `inset(${100 - progress * 100}% 0 0 0)`;
+      });
+    </script> -->
 
   </body>
 

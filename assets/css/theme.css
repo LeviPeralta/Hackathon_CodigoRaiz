@@ -18332,7 +18332,7 @@ label {
   display: flex;
   justify-content: flex-end;
   align-items: flex-end;
-  /*z-index: -1; Esto la manda detrás del contenido */
+  /*z-index: -1; /* Esto la manda detrás del contenido */
   pointer-events: none; /* Para que no bloquee clics en el contenido */
 }
 
